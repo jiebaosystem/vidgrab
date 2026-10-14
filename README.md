@@ -15,7 +15,7 @@
 - **YouTube 高畫質**：YouTube 的高畫質版本，畫面和聲音是分開的兩個檔案。如果有 `ffmpeg`，就分別下載再合併（不重新編碼，很快）；沒有 `ffmpeg` 時，改下載本身帶聲音的版本（畫質較低），並在輸出裡註明。
 - **不被限速**：用 10MB 一段的分段請求下載，避開 YouTube 對整檔下載的限速。
 - **7 天自動清理**：每次執行都會順手刪掉下載資料夾裡超過 7 天的檔案。只刪自己產生的 `vidgrab-*` 檔案，資料夾裡的其他東西不碰。
-- **很便宜**：Apify 用 256MB 記憶體跑，每次解析約 $0.0001。actor 預設的 2GB 要約 $0.18，差了一千多倍。Apify 免費方案每月 $5 的額度，日常使用完全夠。
+- **省一半費用**：Apify 用 256MB 記憶體跑，每條影片約 **$0.093**；actor 預設的 2GB 要約 $0.183。Apify 免費方案每月 $5，大約夠 50 條影片。
 
 ## 安裝
 
@@ -84,7 +84,7 @@ python3 vidgrab.py clean                                # 手動清理過期檔�
 | 抖音 | [`easyapi/douyin-video-downloader`](https://apify.com/easyapi/douyin-video-downloader) |
 | TikTok、YouTube、X、其他 | [`easyapi/all-in-one-media-downloader`](https://apify.com/easyapi/all-in-one-media-downloader) |
 
-兩個 actor 都按事件計費：啟動費按記憶體 GB 數計算，每條結果另收約 $0.003。vidgrab 固定用 256MB 呼叫，2 秒左右就能跑完。
+兩個 actor 都按事件計費：啟動費每 GB 記憶體 $0.09（不足 1GB 也按 1GB 算），每條結果另收約 $0.003。vidgrab 固定用 256MB 呼叫，2 秒左右就能跑完，每條約 $0.093。
 
 ## 測試
 

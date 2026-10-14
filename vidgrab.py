@@ -27,8 +27,8 @@ from datetime import datetime, timedelta
 __version__ = "0.1.0"
 
 APIFY_API = "https://api.apify.com/v2/acts/{actor}/run-sync-get-dataset-items"
-# 256 MB is plenty for these actors. Apify charges the per-run start fee per GB of memory:
-# the actors' 2 GB default cost about $0.18 per video, 256 MB about $0.0001.
+# 256 MB is plenty for these actors. Their start fee is charged per GB of memory (rounded up,
+# $0.09/GB) plus ~$0.003 per result: about $0.093 per video, vs $0.183 at the actors' 2 GB default.
 APIFY_MEMORY_MB = 256
 APIFY_TIMEOUT_S = 180
 

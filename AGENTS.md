@@ -39,7 +39,8 @@ python3 vidgrab.py --version
 ## Things to know
 
 - Takes about 5–40 seconds, depending on video size. Run it with a timeout of a few minutes.
-- One link per call. Don't loop over many links; batch jobs are out of scope.
+- One link per call. Don't loop over many links; batch jobs are out of scope. Each call costs the owner
+  about $0.09 of Apify credit, so never call it speculatively or retry more than once.
 - Files go to `~/vidgrab` (or `$VIDGRAB_DIR`). The tool deletes its own files older than 7 days on every run,
   so you don't need to clean up. Don't store anything else you need in that folder under a `vidgrab-` name.
 - `python3 vidgrab.py resolve "<link>"` only resolves the link and gets `play_url`, without downloading.
